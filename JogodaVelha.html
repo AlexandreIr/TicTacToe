@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da velha</title>
+    <link rel="stylesheet" href="jogodaVelha.css">
+    <script src="./jogodaVelha.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Jogo da velha</h1>
+    </header>
+    <hr>
+    <section id="insertionArea">
+        <label for="player1Name">Nome do jogador X:</label>
+        <input type="text" id="player1Name" placeholder="Digite aqui o nome do jogador">
+        <label for="player2Name">Nome do jogador O:</label>
+        <input type="text" id="player2Name" placeholder="Digite aqui o nome do jogador">
+        <button id="startGame">Iniciar o jogo</button>
+    </section>
+    <hr>
+    <main>
+        <h2>Vez de: <span id="turnPlayer"></span></h2>
+        <section id="gameBoard">
+            <span  data-region="0.0"></span>
+            <span  data-region="0.1"></span>
+            <span  data-region="0.2"></span>
+            <span  data-region="1.0"></span>
+            <span  data-region="1.1"></span>
+            <span  data-region="1.2"></span>
+            <span  data-region="2.0"></span>
+            <span  data-region="2.1"></span>
+            <span  data-region="2.2"></span>
+        </section>
+    </main>
+</body>
+</html>
