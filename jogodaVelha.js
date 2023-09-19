@@ -4,12 +4,12 @@ let turnPlayer='';
 let placarPlayer1=0;
 let placarPlayer2=0;   
 
-
+//função de atualização de turno
 function updateTurn(){
     const playerInput=document.getElementById(turnPlayer);
     document.getElementById('turnPlayer').innerText=playerInput.value;
 }
-
+//função iniciadora do jogo
 function startGame(){
     const player1=document.getElementById('player1Name').value;
     const player2=document.getElementById('player2Name').value;
@@ -20,21 +20,21 @@ function startGame(){
     turnPlayer='player1Name';
     document.querySelector('h2').innerHTML='Vez de: <span id="turnPlayer"></span>';
     updateTurn();
-    gameBoard.forEach(function (element){
-        element.classList.remove('win');
+    gameBoard.forEach(function (element){   
+        element.classList.remove('win');    //remove os win
         element.innerText='';
-        element.addEventListener('click', handleEventBoard);
+        element.addEventListener('click', handleEventBoard);    //torna as células do tabuleiro clicaveis
     })
     document.getElementsByTagName('input')[0].disabled=true;
     document.getElementsByTagName('input')[1].disabled=true;
     }
-    if(!sessionStorage.getItem('player1')){
+    if(!sessionStorage.getItem('player1')){     //armazena o placar no session storage
         sessionStorage.setItem('player1', `${player1}:${placarPlayer1}`);
         sessionStorage.setItem('player2', `${player2}:${placarPlayer2}`);
     }
     sesionStorageSet();
 }
-
+//tratamento do placar
 function sesionStorageSet(winPlayer){
     const player1=document.getElementById('player1Name').value;
     const player2=document.getElementById('player2Name').value;
@@ -56,7 +56,7 @@ function sesionStorageSet(winPlayer){
         sessionStorage.setItem('player2', `${player2}:${placarPlayer2}`);
     }
 }
-
+//verifica se houve vitória
 function isWin(){
     const winReg=[];
     if (vBoard[0][0] && vBoard[0][0] === vBoard[0][1] && vBoard[0][0] === vBoard[0][2])
@@ -77,6 +77,7 @@ function isWin(){
         winReg.push("0.2", "1.1", "2.0")
     return winReg;
 }
+//tratamento da vitória no jogo
 function handleWin(regions){
     regions.forEach(function (region){
             document.querySelector('[data-region="' +region+ '"]').classList.add('win')
@@ -91,7 +92,7 @@ function handleWin(regions){
     string+=sessionStorage.getItem('player2').split(':')[0]+' : '+sessionStorage.getItem('player2').split(':')[1]+'\n';
     alert(string);
 }
-
+//tratamento dos eventos no tabuleiro
 function handleEventBoard(e){
     const region=e.currentTarget.dataset.region;
     const rowCollumnPair=region.split('.');
@@ -132,6 +133,7 @@ function handleEventBoard(e){
         }
     }
 }
+//adiciona iniciador do jogo ao botão
 document.getElementById('startGame').addEventListener('click', startGame);
 
 
