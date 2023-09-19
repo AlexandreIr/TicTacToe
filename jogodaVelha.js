@@ -132,7 +132,6 @@ function handleEventBoard(e){
         }
     }
 }
-//masterline
 document.getElementById('startGame').addEventListener('click', startGame);
 
 
