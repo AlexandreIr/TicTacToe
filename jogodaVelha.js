@@ -109,7 +109,7 @@ function handleEventBoard(e){
         console.clear();
         console.table(vBoard)
         const winRegions=isWin();
-        if(winRegions.length>0){    
+        if(winRegions.length>0){    //se houver vencedor...
             handleWin(winRegions);
             document.getElementById('player1Name').value=''
             document.getElementById('player2Name').value=''
