@@ -1,5 +1,0 @@
-Data: 20 de Julho de 1969
-Modulo: nave a pousar na lua
-Tripulantes: A missão contou com Neil Armstrong e a Buzz Aldrin
-Duração: 8 dias
-Orbitas Lunares:30
